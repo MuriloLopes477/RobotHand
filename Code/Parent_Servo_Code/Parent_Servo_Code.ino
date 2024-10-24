@@ -34,9 +34,7 @@ void setup() {
 }
 
 void loop() {
-  // sendServoDataToChild(I2C_CHILD1_ADDRESS, 11);
-  // sendServoDataToChild(I2C_CHILD1_ADDRESS, 23);
-  // delay(100);
+ 
 }
 
 void sendServoDataToChild(int child_id, int servo_info) {
@@ -81,3 +79,51 @@ void moveIndexStiff() {
   sendServoDataToChild(I2C_CHILD2_ADDRESS, 54);
 }
 
+void moveMiddleRight() {
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 12);
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 26);
+}
+void moveMiddleStiff() {
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 11);
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 26);
+}
+void moveMiddleLeft() {
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 18);
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 26);
+}
+void relaxMiddle() {
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 13);
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 28);
+}
+
+void moveRingStiff() {
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 36);//top
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 44);//bottom
+}
+void moveRingRight() {
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 32);//top
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 43);//bottom
+}
+void moveRingLeft() {
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 34);//top
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 46);//bottom
+}
+
+void movePinkyForward() {
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 61); //top
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 55); //bottom
+}
+
+void movePinkyLeft() {
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 62); //top
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 55); //bottom
+}
+
+void movePinkyRight() {
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 63); //top
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 54); //bottom
+}
+void movePinkyStiff() {
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 64); //top
+  sendServoDataToChild(I2C_CHILD1_ADDRESS, 58); //bottom
+}
