@@ -8,10 +8,16 @@
 #define MIN_SERVO_RANGE 0
 #define SERVO_RANGE4 30
 #define SERVO_RANGE5 130
-#define SERVO_RANGE6 42
+#define SERVO_RANGE6 48
+#define SERVO_RANGE7 60
+#define SERVO_RANGE8 100
 
 Servo middleLeft; //3
 Servo middleRight; //5
+Servo ringRight; //9
+Servo ringLeft; //10
+Servo pinkyRight; //6
+Servo pinkyLeft; //11
 
 void setup() {
   //Begins wire only in child1 address
@@ -23,6 +29,10 @@ void setup() {
   //sets servo motors pins
   middleLeft.attach(3);
   middleRight.attach(5);
+  ringRight.attach(9);
+  ringLeft.attach(10);
+  pinkyRight.attach(6);
+  pinkyLeft.attach(11);
 }
 
 void loop() {
@@ -47,10 +57,13 @@ void moveServo(int servo_id, int servo_pos) {
     } else if (servo_id == 2) {
       middleRight.write(MAX_SERVO_RANGE);
     } else if (servo_id == 3) {
+      ringRight.write(MAX_SERVO_RANGE);
     } else if (servo_id == 4) {
+      ringLeft.write(MAX_SERVO_RANGE);
     } else if (servo_id == 5) {
-    } else {
-
+      pinkyRight.write(MAX_SERVO_RANGE);
+    } else if (servo_id == 6){
+      pinkyLeft.write(MAX_SERVO_RANGE);
     }
   } else if(servo_pos == 2) {
     if (servo_id == 1) {
@@ -58,10 +71,13 @@ void moveServo(int servo_id, int servo_pos) {
     } else if (servo_id == 2) {
       middleRight.write(MED_SERVO_RANGE);
     } else if (servo_id == 3) {
+      ringRight.write(MED_SERVO_RANGE);
     } else if (servo_id == 4) {
+      ringLeft.write(MED_SERVO_RANGE);
     } else if (servo_id == 5) {
+      pinkyRight.write(MED_SERVO_RANGE);
     } else {
-
+      pinkyRight.write(MED_SERVO_RANGE);
     }
   } else if(servo_pos == 3) {
     if (servo_id == 1) {
@@ -69,10 +85,13 @@ void moveServo(int servo_id, int servo_pos) {
     } else if (servo_id == 2) {
       middleRight.write(MIN_SERVO_RANGE);
     } else if (servo_id == 3) {
+      ringRight.write(MIN_SERVO_RANGE);
     } else if (servo_id == 4) {
+      ringLeft.write(MIN_SERVO_RANGE);
     } else if (servo_id == 5) {
+      pinkyRight.write(MIN_SERVO_RANGE);
     } else {
-
+      pinkyLeft.write(MIN_SERVO_RANGE);
     }
   } else if(servo_pos == 4) {
     if (servo_id == 1) {
@@ -80,10 +99,13 @@ void moveServo(int servo_id, int servo_pos) {
     } else if (servo_id == 2) {
       middleRight.write(SERVO_RANGE4);
     } else if (servo_id == 3) {
+      ringRight.write(SERVO_RANGE4);
     } else if (servo_id == 4) {
+      ringLeft.write(SERVO_RANGE4);
     } else if (servo_id == 5) {
+      pinkyRight.write(SERVO_RANGE4);
     } else {
-
+      pinkyLeft.write(SERVO_RANGE4);
     }
   } else if(servo_pos == 5) {
     if (servo_id == 1) {
@@ -91,10 +113,13 @@ void moveServo(int servo_id, int servo_pos) {
     } else if (servo_id == 2) {
       middleRight.write(SERVO_RANGE5);
     } else if (servo_id == 3) {
+      ringRight.write(SERVO_RANGE5);
     } else if (servo_id == 4) {
+      ringLeft.write(SERVO_RANGE5);
     } else if (servo_id == 5) {
+      pinkyRight.write(SERVO_RANGE5);
     } else {
-
+      pinkyLeft.write(SERVO_RANGE5);
     }
   }  else if(servo_pos == 6) {
     if (servo_id == 1) {
@@ -102,10 +127,42 @@ void moveServo(int servo_id, int servo_pos) {
     } else if (servo_id == 2) {
       middleRight.write(SERVO_RANGE6);
     } else if (servo_id == 3) {
+      ringRight.write(SERVO_RANGE6);
     } else if (servo_id == 4) {
+      ringLeft.write(SERVO_RANGE6);
     } else if (servo_id == 5) {
+      pinkyRight.write(SERVO_RANGE6);
     } else {
-
+      pinkyLeft.write(SERVO_RANGE6);
     }
-  } 
+  } else if(servo_pos == 7) {
+    if (servo_id == 1) {
+      middleLeft.write(SERVO_RANGE7);
+    } else if (servo_id == 2) {
+      middleRight.write(SERVO_RANGE7);
+    } else if (servo_id == 3) {
+      ringRight.write(SERVO_RANGE7);
+    } else if (servo_id == 4) {
+      ringLeft.write(SERVO_RANGE7);
+    } else if (servo_id == 5) {
+      pinkyRight.write(SERVO_RANGE7);
+    } else {
+      pinkyLeft.write(SERVO_RANGE7);
+    }
+  }
+  else if(servo_pos == 8) {
+    if (servo_id == 1) {
+      middleLeft.write(SERVO_RANGE8);
+    } else if (servo_id == 2) {
+      middleRight.write(SERVO_RANGE8);
+    } else if (servo_id == 3) {
+      ringRight.write(SERVO_RANGE8);
+    } else if (servo_id == 4) {
+      ringLeft.write(SERVO_RANGE8);
+    } else if (servo_id == 5) {
+      pinkyRight.write(SERVO_RANGE8);
+    } else {
+      pinkyLeft.write(SERVO_RANGE8);
+    }
+  }
 }
